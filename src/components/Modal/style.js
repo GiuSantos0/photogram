@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Card from '../Card';
 
-export const ModalStyled = styled.div`
+export const Backdrop = styled.div`
     position: absolute;
     width: 100%;
     height: 100vh;

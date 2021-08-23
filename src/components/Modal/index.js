@@ -1,16 +1,24 @@
 import React from 'react';
-import {ModalStyled, CardModalStyled} from './style'
+import {Backdrop, CardModalStyled} from './style'
 import { CloseButton } from '../Buttons'
 
-export default function Modal({children, onClose}) {
+// we can pass the id as a parameter because 
+// we have to know exactly where to close
+export default function Modal({id="modal", onClose = () => {}, children}) {
+    const handleClickBackdrop = (e) => {
+        if(e.target.id === id) {
+            onClose();
+        }
+    }
+    
     return(
-        <ModalStyled>
+        <Backdrop id={id} onClick={(e) => handleClickBackdrop(e)}>
             <CardModalStyled>
                 <CloseButton onClick={onClose}/>
                 <div>
                     {children}
                 </div>
             </CardModalStyled>
-        </ModalStyled>
+        </Backdrop>
     )
 }
