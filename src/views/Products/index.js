@@ -25,7 +25,7 @@ export default function Products() {
 
     return (
         <> 
-            <Title>Produtos</Title>
+            <Title>Imagens mais populares</Title>
             <ProductsListStyled>
                 {products.map(product => (
                     <Card>
