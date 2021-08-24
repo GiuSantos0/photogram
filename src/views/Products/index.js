@@ -4,7 +4,7 @@ import api from '../../services/api';
 import { Title, ProductsListStyled } from './style';
 import { ButtonPrimary } from '../../components/Buttons';
 import Card from '../../components/Card';
-import Modal from '../../components/Modal';
+import {Modal, ImageModal} from '../../components/Modal';
 
 export default function Products() {
     const [products, setProducts] = useState([]);
@@ -29,7 +29,7 @@ export default function Products() {
             <ProductsListStyled>
                 {products.map(product => (
                     <Card>
-                        <img src={product.image} onClick={() => openModal(product)}/>
+                        <img alt={product.name} src={product.image} onClick={() => openModal(product)}/>
                         <ul>
                             <li key={`${product.id}-name`}>
                                 <b>
@@ -43,8 +43,13 @@ export default function Products() {
                 ))}
             </ProductsListStyled>
             {isModalVisible && 
-                <Modal onClose={() => setIsModalVisible(false)}>
-                    {productSelected.name}
+                <Modal title={productSelected.name} onClose={() => setIsModalVisible(false)}>
+                        <ImageModal alt={productSelected.name} src={productSelected.image} />
+                        <ul>
+                            <li>{productSelected.price}</li>
+                            <li>{productSelected.stock}</li>
+                            {/* <li>{productSelected.price}</li> */}
+                        </ul>
                 </Modal>
             }
         </>
