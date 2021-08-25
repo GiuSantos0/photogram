@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ButtonPrimary = styled.button`
     width: 100%;
@@ -13,6 +14,26 @@ export const ButtonPrimary = styled.button`
 
     &:hover {
         background: #53c9d8e3;
+    }
+
+`;
+
+export const IconButton = styled(Link)`
+    position: relative;
+    color: #3498db;
+    padding: 10px 10px;
+    outline: 0;
+
+    &:after {
+        content: attr(data-badge);
+        position: absolute;
+        top: -8px;
+        right: -3px;
+        background: #585656;
+        color: #fff;
+        padding: 3px;
+        border-radius: 50%;
+        font-size: .8em;
     }
 
 `;

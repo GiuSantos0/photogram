@@ -4,7 +4,7 @@ import { User, ShoppingCart, Heart } from "react-feather";
 import { Link } from "react-router-dom";
 
 import {Header, Logo, ListOptionsHeader} from "./styles.js";
-
+import { IconButton } from "../components/Buttons";
 import ImageLogo from "../assets/logo.png";
 
 const UserLayout = ({ children }) => {
@@ -22,9 +22,9 @@ const UserLayout = ({ children }) => {
               <User />
             </li>
             <li className="header-option">
-              <Link to="/cart">
+              <IconButton to="/cart" data-badge="10">
                 <ShoppingCart />
-              </Link>
+              </IconButton>
             </li>
           </ListOptionsHeader>
           </nav>
