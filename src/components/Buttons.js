@@ -18,7 +18,7 @@ export const ButtonPrimary = styled.button`
 
 `;
 
-export const IconButton = styled(Link)`
+export const IconButtonWithBadge = styled(Link)`
     position: relative;
     color: #3498db;
     padding: 10px 10px;
