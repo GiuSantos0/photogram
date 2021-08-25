@@ -1,0 +1,34 @@
+import { Reducer } from "redux";
+import { ICartState } from "./types";
+
+const INITIAL_STATE: ICartState = {
+    items: []
+};
+
+const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
+    switch (action.type) {
+        case "ADD_TO_PRODUCT_TO_CART": {
+            const { product } = action.payload;
+
+            console.log(action.payload);
+            return {
+                ...state,
+                items: [
+                    ...state.items,
+                    {
+                        product,
+                        quantity: 1
+                    }
+                ]
+            };
+            break;
+        }
+        default: {
+            return state;
+        }
+    }
+
+    return INITIAL_STATE;
+};
+
+export default cart;

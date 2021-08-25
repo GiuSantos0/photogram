@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Header = styled.header`
     position: fixed;
@@ -20,7 +20,7 @@ export const Header = styled.header`
         height: 100%;
 
     }
-`
+`;
 
 export const Logo = styled.img`
     position: absolute;
@@ -28,7 +28,7 @@ export const Logo = styled.img`
     height: 40px;
     left: 25px;
     top: 7px;
-`
+`;
 
 export const ListOptionsHeader = styled.ul`
     list-style: none;
@@ -41,4 +41,4 @@ export const ListOptionsHeader = styled.ul`
         color: #FFF;
         cursor: pointer;
     }
-`
+`;

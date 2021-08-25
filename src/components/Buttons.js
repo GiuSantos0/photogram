@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ButtonPrimary = styled.button`
     width: 100%;
@@ -10,12 +10,12 @@ export const ButtonPrimary = styled.button`
     font-weight: bold;
     text-transform: uppercase;
     padding: 10px;
-    
+
     &:hover {
         background: #53c9d8e3;
     }
 
-`
+`;
 
 // It should be called: <CloseButton/>
 export const CloseButton = styled.button`
@@ -46,4 +46,4 @@ export const CloseButton = styled.button`
             transform: rotate(-45deg);
         }
 
-`
+`;

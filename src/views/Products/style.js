@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Title = styled.h1`
     font-size: 40px;
     margin-top: 80px;
     line-height: 56px;
-`
+`;
 
 export const ProductsListStyled = styled.div`
     width: 100%;
@@ -36,4 +36,4 @@ export const ProductsListStyled = styled.div`
         }
     }
 
-`
+`;

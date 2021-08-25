@@ -1,0 +1,20 @@
+{
+  "extends": "tslint:latest",
+  "rules": {
+      "max-classes-per-file": {
+          "options": [2]
+      },
+      "no-default-export": false,
+      "no-submodule-imports": {
+          "options": ["tsutils"]
+      },
+      "restrict-plus-operands": true,
+      "strict-boolean-expressions": true,
+      "ordered-imports": [false],
+      "object-literal-sort-keys": [false],
+      "semicolon":[true ,"ignore-interfaces"],
+      "no-trailing-whitespace": false,
+      "trailing-comma": false,
+      "no-console": false
+  }
+}

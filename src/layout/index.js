@@ -1,12 +1,11 @@
-import React, { useEffect, useMemo } from 'react'
-// import { useDispatch } from 'react-redux'
-import { User, ShoppingCart, Heart } from 'react-feather'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useMemo } from "react";
+// import { useDispatch } from "react-redux"
+import { User, ShoppingCart, Heart } from "react-feather";
+import { Link } from "react-router-dom";
 
-import {Header, Logo, ListOptionsHeader} from './styles.js'
+import {Header, Logo, ListOptionsHeader} from "./styles.js";
 
-import ImageLogo from '../assets/logo.png'
-
+import ImageLogo from "../assets/logo.png";
 
 const UserLayout = ({ children }) => {
 
@@ -32,7 +31,7 @@ const UserLayout = ({ children }) => {
       </Header>
       {children}
     </>
-  )
-}
+  );
+};
 
-export default UserLayout
+export default UserLayout;
