@@ -6,6 +6,9 @@ import { IState } from "../../store";
 const Cart: React.FC = () => {
   const cart = useSelector<IState, ICartItem[]>((state) => state.cart.items);
   
+  console.log(cart);
+
+  cart.map((item) => console.log(item));
   return (
     <table>
       <thead>
