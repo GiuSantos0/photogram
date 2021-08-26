@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+![Photogram]("https://firebasestorage.googleapis.com/v0/b/ph-photogram.appspot.com/o/logo.png?alt=media&token=d16c2081-3000-473d-bccc-96fb0e3c8a70")
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Processo Seletivo para a Liven Tech
 
-In the project directory, you can run:
+Por Giulia Santos
 
-### `yarn start`
+## 🔧 Como rodar o projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1.  Instale as dependências do projeto rodando o seguinte comando:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`yarn`
 
-### `yarn test`
+2.  Execute o projeto com o seguinte comando:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`yarn start`
 
-### `yarn build`
+Não esqueça de se certificar que as extensões do ESLint e Prettier estão instaladas no seu Editor de Texto e ativadas no projeto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📋 Especificações
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React 17.0.2
+- TypeScript 4.3.5
+- Node 12.16.2
+- Yarn 1.22.1
 
-### `yarn eject`
+<hr />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## ⚙️ Configurações
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [ESLint](https://eslint.org/)
+- [ESLint Config Airbnb](https://github.com/airbnb/javascript)
+- [Prettier](https://prettier.io/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<hr />
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 📝︎ Extensões recomendadas para o VSCode
 
-## Learn More
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 
-### Code Splitting
+<hr />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🪧 Texto Inicial
 
-### Analyzing the Bundle Size
+Enunciado
+Desenvolver uma loja simples em React, com um catálogo de produtos e um carrinho de compras. O usuário deve poder adicionar/remover produtos do catálogo no carrinho de compras.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Especificações
+Tela de produtos 🎁
+Será responsável por apresentar todos os produtos disponíveis para o usuário em uma lista. Será necessário que você estabeleça comunicação com o back-end, para obter informações relativas a cada um dos produtos.
 
-### Making a Progressive Web App
+Requisição HTTP para pegar a lista de produtos: GET https://5d6da1df777f670014036125.mockapi.io/api/v1/product
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Tela do carrinho de compras 🛒
+Responsável por guardar os itens e quantidades adicionadas pelo usuário. É desejável que o usuário possa aumentar ou diminuir a quantidade de um produto do carrinho, além de remover por completo.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Extra: Testes automatizados ✅
+Criação de suite de testes automatizados para o repositório.
+Sobre a entrega
+Estimativa de tempo para entrega: O primeiro ponto de entrega deste projeto é o próprio tempo de estimativa para a entrega final do projeto.
+Apresentação de 30 minutos (3ª etapa do processo): Durante a apresentação, é importante demonstrar o funcionamento da aplicação, assim como trazer as motivações para cada escolha do projeto. Demonstrações de trechos importantes do código também são valiosas!
+Cópia do repositório: O repositório será entregue para avaliação da estrutura do projeto. Por isso, quaisquer pontos de documentação/comentários em código são bem vindos.
+Boa sorte!
