@@ -20,6 +20,11 @@ export const Total = styled.div`
   align-items: center;
   row-gap:  5px;
   position: relative;
+
+  .unitary-price{
+    font-size: 10px;
+    color: #585858;
+  }
 `;
 
 export const Quantity = styled.div`
@@ -57,7 +62,7 @@ export const QuantityField = styled.div`
     background: transparent;
     border: none;
     &:disabled {
-      color: #585858;
+      color: #c5c2c2;
       cursor: default;
     }
   }

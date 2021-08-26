@@ -15,8 +15,6 @@ import formatMoneyToReal from "../../utils/formatMoneyToReal";
 const Cart: React.FC = () => {
   const cart = useSelector<IState, ICartItem[]>((state) => state.cart.items);
 
-  console.log(cart);
-
   const cartTotalValue = useMemo(() => {
     return cart.reduce(
       (total, item) => total + item.quantity * item.product.price,
@@ -28,21 +26,6 @@ const Cart: React.FC = () => {
     () => formatMoneyToReal(cartTotalValue),
     [cartTotalValue],
   )
-  // const incrementQuantity = useCallback(
-  //   (cartProduct: ICartItem) => {
-
-  //     const product = cart[cartProduct.id]
-
-  //     if (cartProduct.quantity === product.quantity) return
-
-  //     dispatch(incrementCartProductQuantity(cartProduct))
-  //   },
-  //   [dispatch, cart],
-  // )
-
-  // const handleAddProductToCart = useCallback((product: IProduct) => {
-  //     dispatch(addProductToCart(product));
-  // }, [dispatch]);
 
   const handleClickCheckout = () => 
     toast.success('Compra Finalizada!');
@@ -57,14 +40,12 @@ const Cart: React.FC = () => {
           <>
             {cart.map((item) => (
               <CartItem
+                id={item.product.id}
                 name={item.product.name}
                 imageUrl={item.product.image}
                 price={item.product.price}
                 quantity={item.quantity}
                 stock={item.product.stock}
-              // onIncrementQuantity={() => incrementQuantity(product)}
-              // onDecrementQuantity={() => decrementQuantity(product)}
-              // onRemoveItem={() => dispatch(removeCartProduct(product.id))}
               />
             ))}
             <div className="total-price">

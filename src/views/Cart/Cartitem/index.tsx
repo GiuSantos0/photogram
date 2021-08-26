@@ -1,30 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Plus, Minus } from "react-feather";
 import { CartItemStyled, Price, Quantity, QuantityField, Image, ProductInfo, Total } from "./style";
 import { ButtonWarning } from "../../../components/Buttons";
 import formatMoneyToReal from "../../../utils/formatMoneyToReal";
+import { decrementProductQuantity, incrementProductQuantity } from "../../../store/modules/cart/actions";
 
 interface IProps {
+  id: number
   name: string
   imageUrl: string
   quantity: number
   price: number
   stock: number
-  // onIncrementQuantity: () => void
-  // onDecrementQuantity: () => void
-  // onRemoveItem: () => void
 }
 
 const CartItem: React.FC<IProps> = ({
+  id,
   name,
   imageUrl,
   quantity,
   price,
-  stock,
-  // onIncrementQuantity,
-  // onDecrementQuantity,
-  // onRemoveItem,
+  stock
 }) => {
+  const dispatch = useDispatch();
+  const [newQuantity, setNewQuantity] = useState(quantity);
+  const priceInReal = formatMoneyToReal(price);
+
+  const incrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
+      setNewQuantity(newQuantity + 1);
+      dispatch(incrementProductQuantity(id, newQuantity))
+  }
+  
+  const decrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
+      setNewQuantity(newQuantity - 1);
+      dispatch(decrementProductQuantity(id, newQuantity))
+    }
+
   return (
     <CartItemStyled>
       <div>
@@ -40,21 +52,16 @@ const CartItem: React.FC<IProps> = ({
           <QuantityField>
             <button
               type="button"
-            // onClick={onDecrementQuantity}
+              disabled={quantity === 1}
+              onClick={(e) => decrementQuantity(e, id)}
             >
               <Minus />
             </button>
-            <input
-              type="text"
-              value={quantity || ''}
-            // onChange={(e) =>
-            //   handleCartProductInputQuantityChange(e, product?.id)
-            // }
-            />
+            <label>{quantity}</label>
             <button
               type="button"
               disabled={quantity >= stock}
-            // onClick={onIncrementQuantity}
+              onClick={(e) => incrementQuantity(e, id)}
             >
               <Plus />
             </button>
@@ -62,13 +69,16 @@ const CartItem: React.FC<IProps> = ({
         </Quantity>
         <Total>
           <Price>{formatMoneyToReal(price * quantity)}</Price>
+          <label className="unitary-price">
+            {quantity > 1 ? `Valor únitário: ${priceInReal}` : null}
+          </label>
         </Total>
-        <ButtonWarning type="button"
-        // onClick={onRemoveItem}
-        >
-          Remover
-        </ButtonWarning>
       </ProductInfo>
+      <ButtonWarning type="button"
+      // onClick={onRemoveItem}
+      >
+        Remover
+      </ButtonWarning>
     </CartItemStyled>
   );
 };

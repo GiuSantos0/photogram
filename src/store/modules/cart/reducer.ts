@@ -4,8 +4,6 @@ import { ICartState } from "./types";
 
 const CART_PRODUCTS = "@photogram/cart-products";
 
-const cartLocalStorage = localStorage.getItem(CART_PRODUCTS);
-console.log(cartLocalStorage);
 const INITIAL_STATE: ICartState = {
     items: []
 };
@@ -21,6 +19,8 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
                 );
 
                 if (productInCartIndex >= 0) {
+                    // aqui caso a pessoa clique mais de uma vez 
+                    // em comprar adicionamos + 1 a quantidade do produto
                     draft.items[productInCartIndex].quantity++;
                 } else {
                     draft.items.push({
@@ -28,11 +28,31 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
                         quantity: 1,
                     });
                 }
-
-                localStorage.setItem(CART_PRODUCTS, JSON.stringify(draft.items));
-
                 break;
             }
+
+            case "INCREMENT_PRODUCT": {
+                const { productId, quantity } = action.payload;
+                const productInCartIndex = draft.items.findIndex((items) =>
+                    items.product.id === productId,
+                );
+
+                draft.items[productInCartIndex].quantity++;
+                
+                break;
+            }
+                
+            case "DECREMENT_PRODUCT": {
+                const { productId, quantity } = action.payload;
+                const productInCartIndex = draft.items.findIndex((items) =>
+                    items.product.id === productId,
+                );
+
+                draft.items[productInCartIndex].quantity--;
+                
+                break;
+            }
+                
             default: {
                 return draft;
             }
