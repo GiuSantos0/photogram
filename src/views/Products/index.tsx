@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import api from "../../services/api";
 
 import { ProductsListStyled } from "./style";
@@ -9,18 +9,20 @@ import Title from "../../components/Title";
 // import {Modal, ImageModal} from "../../components/Modal";
 import { IProduct } from "../../store/modules/cart/types";
 import { addProductToCart } from "../../store/modules/cart/actions";
+import formatMoneyToReal from "../../utils/formatMoneyToReal";
 
 const Products: React.FC = () => {
-    // const state = useSelector((state) => state);
     const dispatch = useDispatch();
     const [products, setProducts] = useState<IProduct[]>([]);
+    {/* A ideia era que aqui tivesse um modal para abrir a imagem */}
+    {/* vai ficar para uma prox feature */}
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [productSelected, setProductSelected] = useState<IProduct>();
 
     useEffect(() => {
         api.get("/product").then((response) => {
             setProducts(response.data);
-            console.log(response.data);
+            (response.data);
         });
     }, []);
 
@@ -46,7 +48,7 @@ const Products: React.FC = () => {
                                     {product.name}
                                 </b>
                             </li>
-                            <li key={`${product.id}-price`}>{product.price}</li>
+                            <li key={`${product.id}-price`}>{formatMoneyToReal(product.price)}</li>
                         </ul>
                         <ButtonPrimary onClick={() => handleAddProductToCart(product)}>
                             Comprar
@@ -54,7 +56,6 @@ const Products: React.FC = () => {
                     </Card>
                 ))};
             </ProductsListStyled>
-
         </>
     );
 };

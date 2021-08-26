@@ -2,8 +2,6 @@ import { Reducer } from "redux";
 import produce from "immer";
 import { ICartState } from "./types";
 
-const CART_PRODUCTS = "@photogram/cart-products";
-
 const INITIAL_STATE: ICartState = {
     items: []
 };

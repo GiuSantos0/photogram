@@ -1,10 +1,10 @@
-import React, { ReactChild, useEffect, useMemo } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { User, ShoppingCart, Heart } from "react-feather";
+import React, { ReactChild } from "react";
+import { useSelector } from "react-redux";
+import { User, ShoppingCart } from "react-feather";
 import { Link } from "react-router-dom";
 
 import ImageLogo from "../assets/logo.png";
-import {Header, Logo, ListOptionsHeader} from "./styles.js";
+import {Header, Logo, ListOptionsHeader} from "./styles";
 import { IconButtonWithBadge } from "../components/Buttons";
 import { IState } from "../store";
 
