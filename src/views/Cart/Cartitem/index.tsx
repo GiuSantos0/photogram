@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { Plus, Minus } from "react-feather";
 import { CartItemStyled, Price, Quantity, QuantityField, Image, ProductInfo, Total } from "./style";
@@ -24,16 +24,13 @@ const CartItem: React.FC<IProps> = ({
   stock
 }) => {
   const dispatch = useDispatch();
-  const [newQuantity, setNewQuantity] = useState(quantity);
   const priceInReal = formatMoneyToReal(price);
 
   const incrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-      setNewQuantity(newQuantity + 1);
       dispatch(incrementProductQuantity(id, newQuantity))
   }
   
   const decrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-      setNewQuantity(newQuantity - 1);
       dispatch(decrementProductQuantity(id, newQuantity))
     }
 
