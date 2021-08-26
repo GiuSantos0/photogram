@@ -2,16 +2,26 @@ import styled from "styled-components";
 
 export const CartItemStyled = styled.li`
     position: relative;
-    height: 125px;
+    height: 160px;
     padding: 30px 25px;
 
-    display: flex;
     align-items: center;
     justify-content: space-around;
 
     background-color: white;
     border-radius: 16px;
     border-bottom: 2px solid #EFEFEF;
+
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    padding: 10px 5px;
+    gap: 10px;
+
+    @media screen and (max-width: 560px) {
+        height: 200px;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 export const Total = styled.div`
@@ -33,6 +43,7 @@ export const Quantity = styled.div`
   align-items: center;
   row-gap:  5px;
   position: relative;
+
   & > button {
     position: absolute;
     bottom: -20px;
@@ -69,25 +80,35 @@ export const QuantityField = styled.div`
 `;
 
 export const Price = styled.span`
-  text-align: right;
-  color: #585656;
-  font-weight: bold;
-  @media screen and (max-width: 450px) {
-    margin-top: 10px;
-  }
-`;
-
-export const Image = styled.img`
-    border-radius: 9px;
-    width: 6rem;
+    text-align: right;
+    color: #585656;
+    font-weight: bold;
     @media screen and (max-width: 450px) {
         margin-top: 10px;
     }
 `;
 
+export const ButtonDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap:  5px;
+    position: relative;
+`;
+
+export const Image = styled.img`
+    border-radius: 9px;
+    width: 6rem;
+
+    @media screen and (max-width: 450px) {
+        margin-top: 10px;
+        align-self: flex-start;
+    }
+`;
+
 export const ProductInfo = styled.div`
   display: grid;
-  grid-template-columns: 3fr 2fr 2fr;
+  grid-template-columns: 3fr 2fr 2fr 2fr;
   align-items: center;
   .text {
     display: flex;
@@ -106,7 +127,7 @@ export const ProductInfo = styled.div`
   @media screen and (max-width: 450px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
-    gap: var(--gap-big);
+    gap: 5px;
     align-items: center;
     justify-items: center;
   }

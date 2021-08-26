@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Plus, Minus } from "react-feather";
-import { CartItemStyled, Price, Quantity, QuantityField, Image, ProductInfo, Total } from "./style";
+import { CartItemStyled, Price, Quantity, QuantityField, Image, ProductInfo, Total, ButtonDiv } from "./style";
 import { ButtonWarning } from "../../../components/Buttons";
 import formatMoneyToReal from "../../../utils/formatMoneyToReal";
 import { decrementProductQuantity, incrementProductQuantity, removeProduct } from "../../../store/modules/cart/actions";
@@ -74,13 +74,15 @@ const CartItem: React.FC<IProps> = ({
             {quantity > 1 ? `Valor únitário: ${priceInReal}` : null}
           </label>
         </Total>
+        <ButtonDiv>
+          <ButtonWarning
+            type="button"
+            onClick={(e) => onRemoveItem(e, id)}
+          >
+            Remover
+          </ButtonWarning>
+        </ButtonDiv>
       </ProductInfo>
-      <ButtonWarning
-        type="button"
-        onClick={(e) => onRemoveItem(e, id)}
-      >
-        Remover
-      </ButtonWarning>
     </CartItemStyled>
   );
 };
