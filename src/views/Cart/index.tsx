@@ -44,7 +44,7 @@ const Cart: React.FC = () => {
   //     dispatch(addProductToCart(product));
   // }, [dispatch]);
 
-  const handleClickCheckour = () => 
+  const handleClickCheckout = () => 
     toast.success('Compra Finalizada!');
 
 
@@ -75,7 +75,7 @@ const Cart: React.FC = () => {
             </div>
             <div>
               <ButtonPrimary
-                onClick={handleClickCheckour}
+                onClick={handleClickCheckout}
               >
                 Finalizar Compra
               </ButtonPrimary>
