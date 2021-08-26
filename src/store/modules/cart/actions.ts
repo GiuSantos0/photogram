@@ -26,3 +26,12 @@ export function decrementProductQuantity(productId: number) {
     }
   };
 }
+
+export function removeProduct(productId: number) {
+  return {
+    type: "REMOVE_PRODUCT",
+    payload: {
+      productId
+    }
+  };
+}

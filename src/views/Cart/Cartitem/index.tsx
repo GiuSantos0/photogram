@@ -4,7 +4,7 @@ import { Plus, Minus } from "react-feather";
 import { CartItemStyled, Price, Quantity, QuantityField, Image, ProductInfo, Total } from "./style";
 import { ButtonWarning } from "../../../components/Buttons";
 import formatMoneyToReal from "../../../utils/formatMoneyToReal";
-import { decrementProductQuantity, incrementProductQuantity } from "../../../store/modules/cart/actions";
+import { decrementProductQuantity, incrementProductQuantity, removeProduct } from "../../../store/modules/cart/actions";
 
 interface IProps {
   id: number
@@ -27,12 +27,16 @@ const CartItem: React.FC<IProps> = ({
   const priceInReal = formatMoneyToReal(price);
 
   const incrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-      dispatch(incrementProductQuantity(id))
+    dispatch(incrementProductQuantity(id))
   }
   
   const decrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-      dispatch(decrementProductQuantity(id))
-    }
+    dispatch(decrementProductQuantity(id))
+  }
+  
+  const onRemoveItem = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
+    dispatch(removeProduct(id))
+  }
 
   return (
     <CartItemStyled>
@@ -71,8 +75,9 @@ const CartItem: React.FC<IProps> = ({
           </label>
         </Total>
       </ProductInfo>
-      <ButtonWarning type="button"
-      // onClick={onRemoveItem}
+      <ButtonWarning
+        type="button"
+        onClick={(e) => onRemoveItem(e, id)}
       >
         Remover
       </ButtonWarning>
