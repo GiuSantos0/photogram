@@ -18,6 +18,9 @@ Não esqueça de se certificar que as extensões do ESLint e Prettier estão ins
 
 <hr />
 
+## 🖼️ Layout
+O layout está disponivel no [Figma](https://www.figma.com/file/BB6VIGXyLyHCozjjDtRKEm/Untitled?node-id=3%3A2)
+
 ## 📋 Especificações
 
 - React 17.0.2
