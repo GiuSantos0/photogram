@@ -24,6 +24,8 @@ O layout está disponivel no [Figma](https://www.figma.com/file/BB6VIGXyLyHCozjj
 ## 💻 Demo
 Você consegue ver a aplicação rodando [aqui](https://ph-photogram.web.app/), o deploy é feito via [Firebase Hosting](https://firebase.google.com/docs/hosting?hl=pt-br)
 
+__Para o deploy no Firebase é necessário ter o Firebase CLI instalado.__
+
 ## 📋 Especificações
 
 - React 17.0.2
