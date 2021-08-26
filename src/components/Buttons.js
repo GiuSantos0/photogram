@@ -41,44 +41,44 @@ export const IconButtonWithBadge = styled(Link)`
 
 // It should be called: <CloseButton/>
 export const CloseButton = styled.button`
-        background-color: transparent;
-        outline: none;
-        width: 32px;
-        height: 32px;
-        border: none;
-        right: calc(-100% + 20px);
-        top: 0px;
-        display: flex;
-        position: relative;
-        align-items: center;
+    background-color: transparent;
+    outline: none;
+    width: 32px;
+    height: 32px;
+    border: none;
+    right: calc(-100% + 20px);
+    top: 0px;
+    display: flex;
+    position: relative;
+    align-items: center;
 
-        &:before, &:after {
-            content: '';
-            position: absolute;
-            width: 2.5px;
-            height: 24px;
-            background-color: #7a7878;
-        }
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 2.5px;
+        height: 24px;
+        background-color: #7a7878;
+    }
 
-        &:before {
-            transform: rotate(45deg);
-        }
+    &:before {
+        transform: rotate(45deg);
+    }
 
-        &:after {
-            transform: rotate(-45deg);
-        }
+    &:after {
+        transform: rotate(-45deg);
+    }
 
 `;
 
 export const ButtonWarning = styled.button`
-       background: transparent;
-        color: red;
-        border-radius: 5px;
-        border: transparent;
-        margin: 5px;
-        padding: 4px;
+    background: transparent;
+    color: red;
+    border-radius: 5px;
+    border: transparent;
+    margin: 5px;
+    padding: 4px;
 
-        &:hover {
-            background-color: #ecececa1;
-        }
+    &:hover {
+        background-color: #ecececa1;
+    }
 `;
