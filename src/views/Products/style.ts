@@ -6,7 +6,7 @@ export const ProductsListStyled = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
     gap: 15px;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 80px;
 
     font-size: 20px;
