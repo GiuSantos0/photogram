@@ -8,3 +8,21 @@ export function addProductToCart(product: IProduct) {
     }
   };
 }
+
+export function incrementProduct(product: IProduct) {
+  return {
+    type: "INCREMENT_PRODUCT",
+    payload: {
+      product
+    }
+  };
+}
+
+export function decrementProduct(product: IProduct) {
+  return {
+    type: "DECREMENT_PRODUCT",
+    payload: {
+      product
+    }
+  };
+}

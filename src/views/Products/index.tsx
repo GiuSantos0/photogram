@@ -2,9 +2,10 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import api from "../../services/api";
 
-import { Title, ProductsListStyled } from "./style";
+import { ProductsListStyled } from "./style";
 import { ButtonPrimary } from "../../components/Buttons";
 import Card from "../../components/Card";
+import Title from "../../components/Title";
 // import {Modal, ImageModal} from "../../components/Modal";
 import { IProduct } from "../../store/modules/cart/types";
 import { addProductToCart } from "../../store/modules/cart/actions";

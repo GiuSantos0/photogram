@@ -4,6 +4,8 @@ import { ICartState } from "./types";
 
 const CART_PRODUCTS = "@photogram/cart-products";
 
+const cartLocalStorage = localStorage.getItem(CART_PRODUCTS);
+console.log(cartLocalStorage);
 const INITIAL_STATE: ICartState = {
     items: []
 };
@@ -14,8 +16,6 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
             case "ADD_PRODUCT_TO_CART": {
                 const { product } = action.payload;
 
-                console.log(action.payload);
-                console.log(state, draft);
                 const productInCartIndex = draft.items.findIndex((item) =>
                     item.product.id === product.id,
                 );
@@ -28,7 +28,6 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
                         quantity: 1,
                     });
                 }
-                console.log(draft.items);
 
                 localStorage.setItem(CART_PRODUCTS, JSON.stringify(draft.items));
 

@@ -1,30 +1,81 @@
-import React from "react";
+import React, { useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { ICartItem } from "../../store/modules/cart/types";
 import { IState } from "../../store";
+import CartItem from "./Cartitem";
+import Title from "../../components/Title";
+import { ButtonPrimary } from "../../components/Buttons";
+import { CardTotal } from "./style";
+
+import formatMoneyToReal from "../../utils/formatMoneyToReal";
 
 const Cart: React.FC = () => {
   const cart = useSelector<IState, ICartItem[]>((state) => state.cart.items);
-  
+
   console.log(cart);
 
-  cart.map((item) => console.log(item));
+  const cartTotalValue = useMemo(() => {
+    return cart.reduce(
+      (total, item) => total + item.quantity * item.product.price,
+      0,
+    )
+  }, [cart])
+
+  const cartFinalFormattedValue = useMemo(
+    () => formatMoneyToReal(cartTotalValue),
+    [cartTotalValue],
+  )
+  // const incrementQuantity = useCallback(
+  //   (cartProduct: ICartItem) => {
+
+  //     const product = cart[cartProduct.id]
+
+  //     if (cartProduct.quantity === product.quantity) return
+
+  //     dispatch(incrementCartProductQuantity(cartProduct))
+  //   },
+  //   [dispatch, cart],
+  // )
+
+  // const handleAddProductToCart = useCallback((product: IProduct) => {
+  //     dispatch(addProductToCart(product));
+  // }, [dispatch]);
+
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-        </tr>
-      </thead>
-      <tbody>
-        {cart.map((item) => (
-          <tr>
-            <td>{item.product.name}</td>
-            <td>{(item.product.price * item.quantity).toFixed(2)}</td>
-          </tr>
-        ))};
-      </tbody>
-    </table>
+    <>
+      <Title>Carrinho:</Title>
+      <CardTotal>
+        {cart.length !== 0 ? (
+          <>
+            {cart.map((item) => (
+              <CartItem
+                name={item.product.name}
+                imageUrl={item.product.image}
+                price={item.product.price}
+                quantity={item.quantity}
+                stock={item.product.stock}
+              // onIncrementQuantity={() => incrementQuantity(product)}
+              // onDecrementQuantity={() => decrementQuantity(product)}
+              // onRemoveItem={() => dispatch(removeCartProduct(product.id))}
+              />
+            ))}
+            <div className="total-price">
+              <span>
+                <b>Total: </b>
+                {cartFinalFormattedValue}
+              </span>
+            </div>
+            <div>
+              <ButtonPrimary>Finalizar Compra</ButtonPrimary>
+            </div>
+          </>
+        )
+          :
+          <span className="empty-cart">Carrinho vazio :(</span>
+        }
+      </CardTotal>
+
+    </>
   );
 };
 
