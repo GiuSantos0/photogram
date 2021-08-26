@@ -22,7 +22,6 @@ const Products: React.FC = () => {
     useEffect(() => {
         api.get("/product").then((response) => {
             setProducts(response.data);
-            (response.data);
         });
     }, []);
 

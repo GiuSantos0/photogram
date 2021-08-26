@@ -1,5 +1,4 @@
 // Estava passando esse component para Typescript, não deu tempo
-
 // import React from 'react';
 // import styled from 'styled-components';
 // import Card from '../Card';

@@ -5,9 +5,7 @@
           "options": [2]
       },
       "no-default-export": false,
-      "no-submodule-imports": {
-          "options": ["tsutils"]
-      },
+      "no-submodule-imports": false,
       "restrict-plus-operands": true,
       "strict-boolean-expressions": true,
       "ordered-imports": [false],
@@ -15,6 +13,8 @@
       "semicolon":[true ,"ignore-interfaces"],
       "no-trailing-whitespace": false,
       "trailing-comma": false,
-      "no-console": false
+      "no-console": false,
+      "no-shadowed-variable": false,
+      "whitespace": false
   }
 }

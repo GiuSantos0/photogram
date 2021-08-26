@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { ICartItem } from "../../store/modules/cart/types";
 import { IState } from "../../store";
@@ -16,20 +16,16 @@ const Cart: React.FC = () => {
   const cart = useSelector<IState, ICartItem[]>((state) => state.cart.items);
 
   const cartTotalValue = useMemo(() => {
-    return cart.reduce(
-      (total, item) => total + item.quantity * item.product.price,
-      0,
-    )
-  }, [cart])
+    return cart.reduce((total, item) => total + item.quantity * item.product.price,0);
+  }, [cart]);
 
   const cartFinalFormattedValue = useMemo(
     () => formatMoneyToReal(cartTotalValue),
-    [cartTotalValue],
-  )
+    [cartTotalValue]
+  );
 
   const handleClickCheckout = () => 
-    toast.success('Compra Finalizada!');
-
+    toast.success("Compra Finalizada!");
 
   return (
     <>

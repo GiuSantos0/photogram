@@ -27,16 +27,16 @@ const CartItem: React.FC<IProps> = ({
   const priceInReal = formatMoneyToReal(price);
 
   const incrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-    dispatch(incrementProductQuantity(id))
-  }
+    dispatch(incrementProductQuantity(id));
+  };
   
   const decrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-    dispatch(decrementProductQuantity(id))
-  }
+    dispatch(decrementProductQuantity(id));
+  };
   
   const onRemoveItem = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-    dispatch(removeProduct(id))
-  }
+    dispatch(removeProduct(id));
+  };
 
   return (
     <CartItemStyled>
