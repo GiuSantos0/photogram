@@ -45,6 +45,13 @@ Não esqueça de se certificar que as extensões do ESLint e Prettier estão ins
 
 <hr />
 
+## 📝 Próximas Features 
+- Paginação na tela de produtos
+- Select de ordem na tela de produtos, exemplo: __ordem alfabetica, preço...__
+- Ajustar responsividade para ficar bonito em telas menores
+- Finalizar carrinho
+- Favoritos: adicionar e remover
+
 ## 🪧 Texto Inicial
 
 Enunciado
