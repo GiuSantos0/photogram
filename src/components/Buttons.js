@@ -31,11 +31,12 @@ export const IconButtonWithBadge = styled(Link)`
         right: -3px;
         background: #585656;
         color: #fff;
-        padding: 3px;
+        padding: 3px 4px 3px 5px;
         border-radius: 50%;
-        font-size: .8em;
+        font-size: 14px;
+        min-width: 10px;
+        min-height: 10px;
     }
-
 `;
 
 // It should be called: <CloseButton/>
@@ -67,4 +68,17 @@ export const CloseButton = styled.button`
             transform: rotate(-45deg);
         }
 
+`;
+
+export const ButtonWarning = styled.button`
+       background: transparent;
+        color: red;
+        border-radius: 5px;
+        border: transparent;
+        margin: 5px;
+        padding: 4px;
+
+        &:hover {
+            background-color: #ecececa1;
+        }
 `;
