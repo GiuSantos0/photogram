@@ -9,22 +9,20 @@ export function addProductToCart(product: IProduct) {
   };
 }
 
-export function incrementProductQuantity(productId: number, quantity: number ) {
+export function incrementProductQuantity(productId: number) {
   return {
     type: "INCREMENT_PRODUCT",
     payload: {
-      productId,
-      quantity
+      productId
     }
   };
 }
 
-export function decrementProductQuantity(productId: number, quantity: number ) {
+export function decrementProductQuantity(productId: number) {
   return {
     type: "DECREMENT_PRODUCT",
     payload: {
-      productId,
-      quantity
+      productId
     }
   };
 }

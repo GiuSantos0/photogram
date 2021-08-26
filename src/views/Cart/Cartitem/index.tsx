@@ -27,11 +27,11 @@ const CartItem: React.FC<IProps> = ({
   const priceInReal = formatMoneyToReal(price);
 
   const incrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-      dispatch(incrementProductQuantity(id, newQuantity))
+      dispatch(incrementProductQuantity(id))
   }
   
   const decrementQuantity = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-      dispatch(decrementProductQuantity(id, newQuantity))
+      dispatch(decrementProductQuantity(id))
     }
 
   return (

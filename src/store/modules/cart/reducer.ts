@@ -32,7 +32,7 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
             }
 
             case "INCREMENT_PRODUCT": {
-                const { productId, quantity } = action.payload;
+                const { productId } = action.payload;
                 const productInCartIndex = draft.items.findIndex((items) =>
                     items.product.id === productId,
                 );
@@ -43,7 +43,7 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
             }
                 
             case "DECREMENT_PRODUCT": {
-                const { productId, quantity } = action.payload;
+                const { productId } = action.payload;
                 const productInCartIndex = draft.items.findIndex((items) =>
                     items.product.id === productId,
                 );
