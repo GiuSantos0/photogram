@@ -1,4 +1,4 @@
-![Photogram]("https://firebasestorage.googleapis.com/v0/b/ph-photogram.appspot.com/o/logo.png?alt=media&token=d16c2081-3000-473d-bccc-96fb0e3c8a70")
+![Photogram](https://firebasestorage.googleapis.com/v0/b/ph-photogram.appspot.com/o/logo.png?alt=media&token=d16c2081-3000-473d-bccc-96fb0e3c8a70)
 
 
 ## Processo Seletivo para a Liven Tech
