@@ -1,5 +1,8 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { ICartItem } from "../../store/modules/cart/types";
 import { IState } from "../../store";
 import CartItem from "./Cartitem";
@@ -41,8 +44,13 @@ const Cart: React.FC = () => {
   //     dispatch(addProductToCart(product));
   // }, [dispatch]);
 
+  const handleClickCheckour = () => 
+    toast.success('Compra Finalizada!');
+
+
   return (
     <>
+      <ToastContainer />
       <Title>Carrinho:</Title>
       <CardTotal>
         {cart.length !== 0 ? (
@@ -66,7 +74,11 @@ const Cart: React.FC = () => {
               </span>
             </div>
             <div>
-              <ButtonPrimary>Finalizar Compra</ButtonPrimary>
+              <ButtonPrimary
+                onClick={handleClickCheckour}
+              >
+                Finalizar Compra
+              </ButtonPrimary>
             </div>
           </>
         )

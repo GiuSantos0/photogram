@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.1/libexec/bin/yarn.js add eslin@5.6.0
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.1/libexec/bin/yarn.js add react-toastif
 
 PATH: 
   /usr/local/opt/mysql-client/bin:/Users/giulia/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/usr/local/opt/mysql-client/bin:/Users/giulia/google-cloud-sdk/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/eslin: Not found
+  Error: https://registry.yarnpkg.com/react-toastif: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.1/libexec/lib/cli.js:66982:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.22.1/libexec/lib/cli.js:140743:22)
       at Request.emit (events.js:310:20)
@@ -36,7 +36,10 @@ npm manifest:
       "@testing-library/jest-dom": "^5.14.1",
       "@testing-library/react": "^12.0.0",
       "@testing-library/user-event": "^13.2.1",
+      "@types/styled-components": "^5.1.12",
       "axios": "^0.21.1",
+      "eslint": "5.6.0",
+      "immer": "^9.0.5",
       "react": "^17.0.2",
       "react-dom": "^17.0.2",
       "react-feather": "^2.0.9",
@@ -44,6 +47,7 @@ npm manifest:
       "react-router-dom": "^5.2.0",
       "react-scripts-ts": "4.0.3",
       "redux": "^4.1.1",
+      "redux-devtools-extension": "^2.13.9",
       "styled-components": "^5.3.1",
       "web-vitals": "^2.1.0"
     },
@@ -73,9 +77,12 @@ npm manifest:
       "@types/react-router-dom": "^5.1.8",
       "@typescript-eslint/eslint-plugin": "^4.29.3",
       "eslint-config-airbnb": "^18.2.1",
+      "eslint-config-prettier": "^8.3.0",
       "eslint-import-resolver-typescript": "^2.4.0",
+      "eslint-plugin-prettier": "^3.4.1",
       "eslint-plugin-react": "^7.24.0",
       "eslint-plugin-react-hooks": "^4",
+      "prettier": "^2.3.2",
       "typescript": "^4.3.5"
     }
   }
@@ -1373,24 +1380,24 @@ Lockfile:
   
   "@emotion/is-prop-valid@^0.8.8":
     version "0.8.8"
-    resolved "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz"
+    resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
     integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
     dependencies:
       "@emotion/memoize" "0.7.4"
   
   "@emotion/memoize@0.7.4":
     version "0.7.4"
-    resolved "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz"
+    resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.4.tgz#19bf0f5af19149111c40d98bb0cf82119f5d9eeb"
     integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
   
   "@emotion/stylis@^0.8.4":
     version "0.8.5"
-    resolved "https://registry.npmjs.org/@emotion/stylis/-/stylis-0.8.5.tgz"
+    resolved "https://registry.yarnpkg.com/@emotion/stylis/-/stylis-0.8.5.tgz#deacb389bd6ee77d1e7fcaccce9e16c5c7e78e04"
     integrity sha512-h6KtPihKFn3T9fuIrwvXXUOwlx3rfUvfZIcP5a6rh8Y7zjE3O06hT5Ss4S/YI1AYhuZ1kjaE/5EaOOI2NqSylQ==
   
   "@emotion/unitless@^0.7.4":
     version "0.7.5"
-    resolved "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.7.5.tgz"
+    resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
     integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
   
   "@jest/types@^27.0.6":
@@ -1527,7 +1534,7 @@ Lockfile:
     resolved "https://registry.npmjs.org/@types/history/-/history-4.7.9.tgz"
     integrity sha512-MUc6zSmU3tEVnkQ78q0peeEjKWPUADMlC/t++2bI8WnAG2tvYRPIgHG8lWkXwqc8MsUF6Z2MOf+Mh5sazOmhiQ==
   
-  "@types/hoist-non-react-statics@^3.3.0":
+  "@types/hoist-non-react-statics@*", "@types/hoist-non-react-statics@^3.3.0":
     version "3.3.1"
     resolved "https://registry.npmjs.org/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz"
     integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
@@ -1634,6 +1641,15 @@ Lockfile:
     version "0.16.2"
     resolved "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz"
     integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+  
+  "@types/styled-components@^5.1.12":
+    version "5.1.12"
+    resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.12.tgz#1a3679942746adecd1e736bfc47aea2c938a7d9a"
+    integrity sha512-sTjc0+gMl08JvOHchQKgEGbbiSexSvWg5khUNSH4kosb7Tl4782AtfWMkAhQmeXMg2vIn6PthGVHFW+U/Dpihg==
+    dependencies:
+      "@types/hoist-non-react-statics" "*"
+      "@types/react" "*"
+      csstype "^3.0.2"
   
   "@types/tapable@1.0.2":
     version "1.0.2"
@@ -2538,7 +2554,7 @@ Lockfile:
   
   "babel-plugin-styled-components@>= 1.12.0":
     version "1.13.2"
-    resolved "https://registry.npmjs.org/babel-plugin-styled-components/-/babel-plugin-styled-components-1.13.2.tgz"
+    resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.13.2.tgz#ebe0e6deff51d7f93fceda1819e9b96aeb88278d"
     integrity sha512-Vb1R3d4g+MUfPQPVDMCGjm3cDocJEUTR7Xq7QS95JWWeksN1wdFRYpD2kulDgI3Huuaf1CZd+NK4KQmqUFh5dA==
     dependencies:
       "@babel/helper-annotate-as-pure" "^7.0.0"
@@ -2548,7 +2564,7 @@ Lockfile:
   
   babel-plugin-syntax-jsx@^6.18.0:
     version "6.18.0"
-    resolved "https://registry.npmjs.org/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz"
+    resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
     integrity sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=
   
   babel-plugin-syntax-object-rest-spread@^6.13.0, babel-plugin-syntax-object-rest-spread@^6.8.0:
@@ -3118,7 +3134,7 @@ Lockfile:
   
   camelize@^1.0.0:
     version "1.0.0"
-    resolved "https://registry.npmjs.org/camelize/-/camelize-1.0.0.tgz"
+    resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
     integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
   
   caniuse-api@^3.0.0:
@@ -3712,7 +3728,7 @@ Lockfile:
   
   css-color-keywords@^1.0.0:
     version "1.0.0"
-    resolved "https://registry.npmjs.org/css-color-keywords/-/css-color-keywords-1.0.0.tgz"
+    resolved "https://registry.yarnpkg.com/css-color-keywords/-/css-color-keywords-1.0.0.tgz#fea2616dc676b2962686b3af8dbdbe180b244e05"
     integrity sha1-/qJhbcZ2spYmhrOvjb2+GAskTgU=
   
   css-color-names@0.0.4, css-color-names@^0.0.4:
@@ -3782,7 +3798,7 @@ Lockfile:
   
   css-to-react-native@^3.0.0:
     version "3.0.0"
-    resolved "https://registry.npmjs.org/css-to-react-native/-/css-to-react-native-3.0.0.tgz"
+    resolved "https://registry.yarnpkg.com/css-to-react-native/-/css-to-react-native-3.0.0.tgz#62dbe678072a824a689bcfee011fc96e02a7d756"
     integrity sha512-Ro1yETZA813eoyUp2GDBhG2j+YggidUmzO1/v9eYBKR2EHVEniE2MI/NqpTQ954BMpTPZFsGNPm46qFB9dpaPQ==
     dependencies:
       camelize "^1.0.0"
@@ -4567,6 +4583,11 @@ Lockfile:
       object.assign "^4.1.2"
       object.entries "^1.1.2"
   
+  eslint-config-prettier@^8.3.0:
+    version "8.3.0"
+    resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.3.0.tgz#f7471b20b6fe8a9a9254cc684454202886a2dd7a"
+    integrity sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==
+  
   eslint-config-react-app@^3.0.0:
     version "3.0.8"
     resolved "https://registry.npmjs.org/eslint-config-react-app/-/eslint-config-react-app-3.0.8.tgz"
@@ -4648,6 +4669,13 @@ Lockfile:
       emoji-regex "^6.5.1"
       has "^1.0.3"
       jsx-ast-utils "^2.0.1"
+  
+  eslint-plugin-prettier@^3.4.1:
+    version "3.4.1"
+    resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.4.1.tgz#e9ddb200efb6f3d05ffe83b1665a716af4a387e5"
+    integrity sha512-htg25EUYUeIhKHXjOinK4BgCcDwtLHjqaxCDsMy5nbnUMkKFvIhMVCp+5GFUXQ4Nr8lBsPqtGAqBenbpFqAA2g==
+    dependencies:
+      prettier-linter-helpers "^1.0.0"
   
   eslint-plugin-react-hooks@^4:
     version "4.2.0"
@@ -5064,6 +5092,11 @@ Lockfile:
     version "3.1.1"
     resolved "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.1.tgz"
     integrity sha512-8UEa58QDLauDNfpbrX55Q9jrGHThw2ZMdOky5Gl1CDtVeJDPVrG4Jxx1N8jw2gkWaff5UUuX1KJd+9zGe2B+ZA==
+  
+  fast-diff@^1.1.2:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
+    integrity sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
   
   fast-glob@^2.0.2:
     version "2.2.7"
@@ -6185,6 +6218,11 @@ Lockfile:
     version "1.7.2"
     resolved "https://registry.npmjs.org/immer/-/immer-1.7.2.tgz"
     integrity sha512-4Urocwu9+XLDJw4Tc6ZCg7APVjjLInCFvO4TwGsAYV5zT6YYSor14dsZR0+0tHlDIN92cFUOq+i7fC00G5vTxA==
+  
+  immer@^9.0.5:
+    version "9.0.5"
+    resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.5.tgz#a7154f34fe7064f15f00554cc94c66cc0bf453ec"
+    integrity sha512-2WuIehr2y4lmYz9gaQzetPR2ECniCifk4ORaQbU3g5EalLt+0IVTosEPJ5BoYl/75ky2mivzdRzV8wWgQGOSYQ==
   
   import-cwd@^2.0.0:
     version "2.1.0"
@@ -7769,12 +7807,12 @@ Lockfile:
     resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
     integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
   
-  "lodash@>=3.5 <5", lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.5:
+  "lodash@>=3.5 <5", lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.5:
     version "4.17.15"
     resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz"
     integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
   
-  lodash@^4.17.10, lodash@^4.17.12, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4:
+  lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4:
     version "4.17.21"
     resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
     integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -9714,10 +9752,22 @@ Lockfile:
     resolved "https://registry.npmjs.org/preserve/-/preserve-0.2.0.tgz"
     integrity sha1-gV7R9uvGWSb4ZbMQwHE7yzMVzks=
   
+  prettier-linter-helpers@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/prettier-linter-helpers/-/prettier-linter-helpers-1.0.0.tgz#d23d41fe1375646de2d0104d3454a3008802cf7b"
+    integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
+    dependencies:
+      fast-diff "^1.1.2"
+  
   prettier@^1.14.2:
     version "1.19.1"
     resolved "https://registry.npmjs.org/prettier/-/prettier-1.19.1.tgz"
     integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+  
+  prettier@^2.3.2:
+    version "2.3.2"
+    resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+    integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
   
   pretty-bytes@^4.0.2:
     version "4.0.2"
@@ -10238,6 +10288,11 @@ Lockfile:
     dependencies:
       indent-string "^4.0.0"
       strip-indent "^3.0.0"
+  
+  redux-devtools-extension@^2.13.9:
+    version "2.13.9"
+    resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.9.tgz#6b764e8028b507adcb75a1cae790f71e6be08ae7"
+    integrity sha512-cNJ8Q/EtjhQaZ71c8I9+BPySIBVEKssbPpskBfsXqb8HJ002A3KRVHfeRzwRo6mGPqsm7XuHTqNSNeS1Khig0A==
   
   redux@^4.0.0, redux@^4.1.1:
     version "4.1.1"
@@ -10844,7 +10899,7 @@ Lockfile:
   
   shallowequal@^1.1.0:
     version "1.1.0"
-    resolved "https://registry.npmjs.org/shallowequal/-/shallowequal-1.1.0.tgz"
+    resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
     integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
   
   shebang-command@^1.2.0:
